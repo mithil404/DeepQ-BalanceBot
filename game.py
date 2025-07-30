@@ -19,13 +19,14 @@ class Game:
         self.sim = sim
         self.sim.startSimulation()
         print("Bot initialized")
+        sim.startSimulation()
         self.reset()
 
 
     def reset(self):
         self.sim.setJointTargetVelocity(motor_left, 0.0)
         self.sim.setJointTargetVelocity(motor_right, 0.0)
-        self.sim.setObjectPosition(chassis, [0.0,0.0,0.160])
+        self.sim.setObjectPosition(chassis, [-0.04,-0.06,0.090])
         self.sim.setObjectOrientation(chassis, [0.0, random.uniform(-0.05, 0.05), 0.0])
         self.speed = 0.0
         self.score = 0
